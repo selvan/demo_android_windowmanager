@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
@@ -46,7 +47,9 @@ class MainActivity : AppCompatActivity() {
         // go full screen
         val attrs: WindowManager.LayoutParams = this.getWindow().getAttributes()
         attrs.flags = attrs.flags or WindowManager.LayoutParams.FLAG_FULLSCREEN
+        Log.d("MainActivity", "Type is ${attrs.type}")
         this.getWindow().setAttributes(attrs)
+
 
 //        window.decorView.rootView.post {
 //          // Based on https://stackoverflow.com/questions/4187673/problems-creating-a-popup-window-in-android-activity/4713487#4713487
